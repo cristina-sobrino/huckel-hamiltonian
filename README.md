@@ -20,6 +20,14 @@ The input has four different sections:
 
 - The last line must be the total number of atoms in the system
 
+## Input example
+```
+alternated
+ring
+eq_atoms
+10
+```
+
 
 # HOW TO RUN THE CODE
 
@@ -30,4 +38,5 @@ Then, the code can be executed just by running `./huckel` in the same directory 
 
 - Fortran compiler (i.e. gfortran) 
 - LAPACK library 
+
 
