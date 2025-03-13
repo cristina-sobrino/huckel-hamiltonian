@@ -34,8 +34,6 @@ program diag
 
       else if (bond_type == "alternated") then
               write(*,*) "Two different bond lengths"
-        beta_plus = -1.0d0
-        beta_minus = -0.1d0
            if (beta_plus == 0.d0 .and. beta_minus == 0.d0) then
                    write(*,*) "Please select a value for beta_plus and beta_minus"
            end if

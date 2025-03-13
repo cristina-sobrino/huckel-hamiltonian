@@ -22,7 +22,7 @@ The input has four different sections:
 
 ## Input example
 ```
-alternated
+alternated -1.d0 -0.1d0
 ring
 eq_atoms
 10
