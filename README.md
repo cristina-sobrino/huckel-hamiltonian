@@ -8,8 +8,8 @@ The input file must be named "input.inp".
 The input has four different sections:
 
 - The first line is the "bond type", which specifies whether there are one or two different values for the bond length. There are two possible values for this keyword:
-   - alternated (two different values of bond length) 
-   - equal (all bonds are equal) 
+   - alternated (two different values of bond length) followed by the beta values 
+   - equal (all bonds are equal) followed by the beta values  
 
 - The second line refers to the system being linear or a ring. The keywords are "linear" or "ring". 
 
