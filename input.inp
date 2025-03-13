@@ -1,4 +1,4 @@
-alternated
-ring
-eq_atoms
-10
+alternated -1.0d0 -1.d0
+linear
+alt_atoms 
+100
