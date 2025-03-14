@@ -66,30 +66,40 @@ program diag
 ! Filling the Hamiltonian matrix with the appropriate values   
         contador = 0
  ! dimension of matrix
-      allocate(mat(n_at, n_at), eigen_values(n_at), eigenvector(n_at, n_at))
-      do i = 1,n_at
-        do j = 1,n_at
-          if (i == j) then
+     allocate(mat(n_at, n_at), eigen_values(n_at), eigenvector(n_at, n_at))
 
-                if (mod(contador,2) == 0) then
-                  mat(i,j) = alpha_1 !the diagonal elements are the alpha values
-                  mat(i,j+1) = beta_plus !the off-diagonal elements are the beta values
-                  mat(j+1,i) = beta_plus
-                else 
-                  mat(i,j) = alpha_2 
-                  mat(i,j+1) = beta_minus
-                  mat(j+1,i) = beta_minus
-                end if
-                contador = contador + 1
+         do i = 1,n_at
+            do j = 1,n_at
 
-          end if
-        end do
-      end do
-      
+         if (i == j) then
+
+               if (mod(contador,2) == 0) then
+                 mat(i,j) = alpha_1 !the diagonal elements are the alpha values
+
+                 if ( j < n_at) then
+                 mat(i,j+1) = beta_plus !the off-diagonal elements are the beta values
+                 mat(j+1,i) = beta_plus
+                 endif
+
+               else 
+                 mat(i,j) = alpha_2 
+                 
+                 if (j < n_at) then
+                 mat(i,j+1) = beta_minus
+                 mat(j+1,i) = beta_minus
+                 end if
+
+               end if
+               contador = contador + 1
+
+         end if
+       end do
+     end do
+     
       !For the rings, we need do the hamiltonian as if we had a chain and 
       !then add beta values at the extreme positions to "close" the chain
   
-      if (mol_type == "ring" ) then
+     if (mol_type == "ring" ) then
          mat(n_at,1) = beta_minus
          mat(1,n_at) = beta_minus
 

@@ -1,4 +1,4 @@
-alternated -1.d0 -0.1d0 
+equal -1.d0 -0.5d0
 linear
-eq_atoms 
-6
+alt_atoms 
+100
